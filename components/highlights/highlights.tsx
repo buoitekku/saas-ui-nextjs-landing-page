@@ -30,7 +30,7 @@ export const HighlightsItem: React.FC<HighlightBoxProps> = (props) => {
       overflow="hidden"
       position="relative"
       bg="white"
-      _dark={{ bg: 'gray.800' }}
+      _dark={{ bg: 'safeTalk.navy.800' }}
       {...rest}
     >
       {title && (
@@ -51,7 +51,7 @@ export const HighlightsTestimonialItem: React.FC<
     description,
     avatar,
     children,
-    gradient = ['primary.500', 'secondary.500'],
+    gradient = ['safeTalk.turquoise.500', 'safeTalk.blue.500'],
     ...rest
   } = props
   const theme = useTheme()

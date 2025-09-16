@@ -1,4 +1,5 @@
-import { MotionBox, MotionBoxProps } from './box'
+import { motion } from 'framer-motion'
+import type { MotionBoxProps } from './box'
 import React from 'react'
 
 export const Float: React.FC<
@@ -6,7 +7,7 @@ export const Float: React.FC<
 > = (props) => {
   const { children, delay = 0.2, steps = [10, -10, 10], ...rest } = props
   return (
-    <MotionBox
+    <motion.div
       animate={{ translateY: steps }}
       transition={{
         delay,
@@ -20,6 +21,6 @@ export const Float: React.FC<
       {...rest}
     >
       {children}
-    </MotionBox>
+    </motion.div>
   )
 }

@@ -1,0 +1,30 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- AI Detection icon with brain and neural network -->
+  <circle cx="32" cy="32" r="30" fill="#8974B2" opacity="0.1"/>
+  
+  <!-- Brain outline -->
+  <path d="M20 28 C18 24 22 20 28 22 C30 18 38 18 40 22 C46 20 50 24 48 28 C50 30 50 34 48 36 C50 40 46 44 40 42 C38 46 30 46 28 42 C22 44 18 40 20 36 C18 34 18 30 20 28 Z" 
+        fill="white" stroke="#8974B2" stroke-width="2"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="26" cy="28" r="2" fill="#8974B2"/>
+  <circle cx="32" cy="26" r="2" fill="#8974B2"/>
+  <circle cx="38" cy="28" r="2" fill="#8974B2"/>
+  <circle cx="28" cy="34" r="2" fill="#8974B2"/>
+  <circle cx="36" cy="34" r="2" fill="#8974B2"/>
+  <circle cx="32" cy="38" r="2" fill="#8974B2"/>
+  
+  <!-- Neural connections -->
+  <line x1="26" y1="28" x2="32" y2="26" stroke="#8974B2" stroke-width="1" opacity="0.6"/>
+  <line x1="32" y1="26" x2="38" y2="28" stroke="#8974B2" stroke-width="1" opacity="0.6"/>
+  <line x1="26" y1="28" x2="28" y2="34" stroke="#8974B2" stroke-width="1" opacity="0.6"/>
+  <line x1="38" y1="28" x2="36" y2="34" stroke="#8974B2" stroke-width="1" opacity="0.6"/>
+  <line x1="28" y1="34" x2="32" y2="38" stroke="#8974B2" stroke-width="1" opacity="0.6"/>
+  <line x1="36" y1="34" x2="32" y2="38" stroke="#8974B2" stroke-width="1" opacity="0.6"/>
+  
+  <!-- AI processing indicators -->
+  <path d="M12 20 L16 16 M12 16 L16 20" stroke="#C5D54E" stroke-width="2" stroke-linecap="round"/>
+  <path d="M48 20 L52 16 M48 16 L52 20" stroke="#C5D54E" stroke-width="2" stroke-linecap="round"/>
+  <path d="M12 44 L16 48 M12 48 L16 44" stroke="#C5D54E" stroke-width="2" stroke-linecap="round"/>
+  <path d="M48 44 L52 48 M48 48 L52 44" stroke="#C5D54E" stroke-width="2" stroke-linecap="round"/>
+</svg>

@@ -60,11 +60,19 @@ export const Feature: React.FC<FeatureProps> = (props) => {
   const pos = iconPosition || ip
   const direction = pos === 'left' ? 'row' : 'column'
 
+  // Check if icon is a React component (custom Safe Talk icons) or an icon type (Feather icons)
+  const isCustomComponent = icon && typeof icon === 'function' && icon.displayName
+  const numericIconSize = typeof iconSize === 'number' ? iconSize : 8
+  
   return (
     <Stack sx={styles.container} direction={direction}>
       {icon && (
         <Circle sx={styles.icon}>
-          <Icon as={icon} boxSize={iconSize} />
+          {isCustomComponent ? (
+            React.createElement(icon, { size: numericIconSize * 4 })
+          ) : (
+            <Icon as={icon} boxSize={iconSize} />
+          )}
         </Circle>
       )}
       <Box>

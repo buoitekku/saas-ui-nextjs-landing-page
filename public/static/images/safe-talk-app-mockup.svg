@@ -1,0 +1,41 @@
+<svg width="300" height="500" viewBox="0 0 300 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone frame -->
+  <rect width="300" height="500" rx="20" fill="#F7FAFC"/>
+  <rect x="10" y="10" width="280" height="480" rx="15" fill="white"/>
+  
+  <!-- Status bar -->
+  <rect x="20" y="30" width="260" height="20" fill="#E2E8F0"/>
+  <text x="30" y="45" fill="#4A5568" font-family="Arial" font-size="12">9:41</text>
+  <text x="270" y="45" fill="#4A5568" font-family="Arial" font-size="12" text-anchor="end">100%</text>
+  
+  <!-- App header -->
+  <rect x="20" y="70" width="260" height="50" rx="8" fill="#3AB5B2"/>
+  <text x="150" y="100" fill="white" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Safe Talk</text>
+  
+  <!-- Shield icon -->
+  <circle cx="150" cy="200" r="40" fill="#71C6DA" opacity="0.2"/>
+  <svg x="130" y="180" width="40" height="40" viewBox="0 0 24 24" fill="none">
+    <path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z" stroke="#3AB5B2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  
+  <!-- Status text -->
+  <text x="150" y="270" fill="#0A3447" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Ochrona aktywna</text>
+  <text x="150" y="290" fill="#4A5568" font-family="Arial" font-size="14" text-anchor="middle">Analizuję rozmowy w czasie rzeczywistym</text>
+  
+  <!-- Action button -->
+  <rect x="40" y="320" width="220" height="45" rx="22" fill="#C5D54E"/>
+  <text x="150" y="347" fill="white" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle">Rozpocznij ochronę</text>
+  
+  <!-- Stats -->
+  <rect x="30" y="390" width="70" height="60" rx="8" fill="#E6F7F6"/>
+  <text x="65" y="410" fill="#3AB5B2" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">95%</text>
+  <text x="65" y="425" fill="#4A5568" font-family="Arial" font-size="10" text-anchor="middle">skuteczność</text>
+  
+  <rect x="115" y="390" width="70" height="60" rx="8" fill="#EBF8FC"/>
+  <text x="150" y="410" fill="#71C6DA" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">&lt;1s</text>
+  <text x="150" y="425" fill="#4A5568" font-family="Arial" font-size="10" text-anchor="middle">reakcja</text>
+  
+  <rect x="200" y="390" width="70" height="60" rx="8" fill="#F5F9E8"/>
+  <text x="235" y="410" fill="#C5D54E" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle">100%</text>
+  <text x="235" y="425" fill="#4A5568" font-family="Arial" font-size="10" text-anchor="middle">prywatność</text>
+</svg>

@@ -1,1 +1,1 @@
-export * from './faq'
+export * from './enhanced-faq'

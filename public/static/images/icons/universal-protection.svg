@@ -1,0 +1,38 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Universal Protection icon with people and shield -->
+  <circle cx="32" cy="32" r="30" fill="#B5BCD7" opacity="0.1"/>
+  
+  <!-- Central shield -->
+  <path d="M32 16 L40 20 L40 28 C40 34 32 40 32 40 C32 40 24 34 24 28 L24 20 L32 16 Z" 
+        fill="white" stroke="#B5BCD7" stroke-width="2"/>
+  
+  <!-- Shield checkmark -->
+  <path d="M28 28 L30 30 L36 24" fill="none" stroke="#88C594" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- People around shield - representing all ages -->
+  <!-- Elderly person -->
+  <circle cx="16" cy="24" r="3" fill="#3AB5B2"/>
+  <rect x="13" y="27" width="6" height="8" rx="3" fill="#3AB5B2"/>
+  <line x1="14" y1="30" x2="12" y2="32" stroke="#3AB5B2" stroke-width="1.5" stroke-linecap="round"/> <!-- walking stick -->
+  
+  <!-- Adult person -->
+  <circle cx="48" cy="24" r="3" fill="#71C6DA"/>
+  <rect x="45" y="27" width="6" height="8" rx="3" fill="#71C6DA"/>
+  
+  <!-- Young person -->
+  <circle cx="16" cy="44" r="2.5" fill="#C5D54E"/>
+  <rect x="13.5" y="46.5" width="5" height="7" rx="2.5" fill="#C5D54E"/>
+  
+  <!-- Child -->
+  <circle cx="48" cy="44" r="2" fill="#8974B2"/>
+  <rect x="46" y="46" width="4" height="6" rx="2" fill="#8974B2"/>
+  
+  <!-- Protection aura lines connecting to shield -->
+  <line x1="19" y1="28" x2="28" y2="24" stroke="#88C594" stroke-width="1" opacity="0.4" stroke-dasharray="2,2"/>
+  <line x1="45" y1="28" x2="36" y2="24" stroke="#88C594" stroke-width="1" opacity="0.4" stroke-dasharray="2,2"/>
+  <line x1="19" y1="44" x2="28" y2="36" stroke="#88C594" stroke-width="1" opacity="0.4" stroke-dasharray="2,2"/>
+  <line x1="45" y1="44" x2="36" y2="36" stroke="#88C594" stroke-width="1" opacity="0.4" stroke-dasharray="2,2"/>
+  
+  <!-- Universal coverage indicator -->
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#88C594" stroke-width="1" opacity="0.3" stroke-dasharray="4,4"/>
+</svg>

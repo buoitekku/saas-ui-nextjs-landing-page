@@ -30,7 +30,7 @@ interface NavLinkProps extends LinkProps {
 
 function NavLink({ href, children, isActive, ...rest }: NavLinkProps) {
   const pathname = usePathname()
-  const bgActiveHoverColor = useColorModeValue('gray.100', 'whiteAlpha.100')
+  const bgActiveHoverColor = useColorModeValue('safeTalk.turquoise.50', 'safeTalk.turquoise.900')
 
   const [, group] = href?.split('/') || []
   isActive = isActive ?? pathname?.includes(group)
@@ -144,7 +144,7 @@ export const MobileNavButton = React.forwardRef(
         ref={ref}
         display={{ base: 'flex', md: 'none' }}
         fontSize="20px"
-        color={useColorModeValue('gray.800', 'inherit')}
+        color={useColorModeValue('safeTalk.navy.400', 'inherit')}
         variant="ghost"
         icon={<AiOutlineMenu />}
         {...props}

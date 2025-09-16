@@ -1,0 +1,1 @@
+export { VisualHierarchyDemo } from './visual-hierarchy-demo';

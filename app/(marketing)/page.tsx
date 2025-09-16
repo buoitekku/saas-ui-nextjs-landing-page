@@ -2,261 +2,169 @@
 
 import {
   Box,
-  ButtonGroup,
-  Container,
-  Flex,
-  HStack,
   Heading,
-  Icon,
-  IconButton,
+  HStack,
   Stack,
   Tag,
   Text,
   VStack,
   Wrap,
-  useClipboard,
 } from '@chakra-ui/react'
-import { Br, Link } from '@saas-ui/react'
-import type { Metadata, NextPage } from 'next'
-import Image from 'next/image'
-import {
-  FiArrowRight,
-  FiBox,
-  FiCheck,
-  FiCode,
-  FiCopy,
-  FiFlag,
-  FiGrid,
-  FiLock,
-  FiSearch,
-  FiSliders,
-  FiSmile,
-  FiTerminal,
-  FiThumbsUp,
-  FiToggleLeft,
-  FiTrendingUp,
-  FiUserPlus,
-} from 'react-icons/fi'
+import { Br } from '@saas-ui/react'
+import type { NextPage } from 'next'
+import { 
+  RealTimeAnalysisIcon,
+  AIDetectionIcon,
+  PrivacyProtectionIcon,
+  SmartAlertsIcon,
+  VoiceRecognitionIcon,
+  UniversalProtectionIcon
+} from '#components/safe-talk-icons'
 
 import * as React from 'react'
 
-import { ButtonLink } from '#components/button-link/button-link'
-import { Faq } from '#components/faq'
+import { lazy, Suspense } from 'react'
+
+// Lazy load analytics components for better performance
+const ScrollDepthTracker = lazy(() => 
+  import('#components/analytics/conversion-tracking').then(m => ({ default: m.ScrollDepthTracker }))
+)
+const TimeOnPageTracker = lazy(() => 
+  import('#components/analytics/conversion-tracking').then(m => ({ default: m.TimeOnPageTracker }))
+)
+import { AppShowcase } from '#components/app-showcase'
+import { Contact } from '#components/contact'
+import { EnhancedFaq } from '#components/faq'
+import { FeatureDemos } from '#components/feature-demos'
+import { FocusDemo } from '#components/focus-demo'
+import { VisualHierarchyDemo } from '#components/visual-hierarchy-demo'
+import { StatusDemo } from '#components/status-demo'
+import { MobileOptimization } from '#components/mobile-optimization'
 import { Features } from '#components/features'
-import { BackgroundGradient } from '#components/gradients/background-gradient'
-import { Hero } from '#components/hero'
+import { SafeTalkHero, HeroBenefits } from '#components/hero'
 import {
   Highlights,
   HighlightsItem,
   HighlightsTestimonialItem,
 } from '#components/highlights'
-import { ChakraLogo, NextjsLogo } from '#components/logos'
 import { FallInPlace } from '#components/motion/fall-in-place'
+import { ProblemSolution } from '#components/problem-solution/problem-solution'
 import { Pricing } from '#components/pricing/pricing'
+import { TargetAudience } from '#components/target-audience'
+import { Team } from '#components/team'
 import { Testimonial, Testimonials } from '#components/testimonials'
+import { TrustSecurity } from '#components/trust-security'
 import { Em } from '#components/typography'
+import { StaggerContainer, StaggerItem, HoverLift } from '#components/motion'
 import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
 
-export const meta: Metadata = {
-  title: 'Saas UI Landingspage',
-  description: 'Free SaaS landingspage starter kit',
-}
+// Metadata will be handled by layout.tsx and config
+// export const meta: Metadata = {
+//   title: 'Saas UI Landingspage',
+//   description: 'Free SaaS landingspage starter kit',
+// }
 
 const Home: NextPage = () => {
   return (
     <Box>
+      <MobileOptimization />
+      <Suspense fallback={null}>
+        <ScrollDepthTracker />
+        <TimeOnPageTracker />
+      </Suspense>
+      
       <HeroSection />
 
-      <HighlightsSection />
+      <ProblemSolutionSection />
 
       <FeaturesSection />
+
+      <AppShowcase />
+
+      <FeatureDemos />
+
+      <TargetAudienceSection />
+
+      <TrustSecuritySection />
+
+      <TeamSection />
 
       <TestimonialsSection />
 
       <PricingSection />
 
       <FaqSection />
+
+      <FocusDemo />
+
+      <VisualHierarchyDemo />
+
+      <StatusDemo />
+
+      <ContactSection />
     </Box>
   )
 }
 
 const HeroSection: React.FC = () => {
   return (
-    <Box position="relative" overflow="hidden">
-      <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
-        <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
-          <Hero
-            id="home"
-            justifyContent="flex-start"
-            px="0"
-            title={
-              <FallInPlace>
-                Build beautiful
-                <Br /> software faster
-              </FallInPlace>
-            }
-            description={
-              <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{' '}
-                build intuitive SaaS products with speed.
-              </FallInPlace>
-            }
-          >
-            <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-              </HStack>
-
-              <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
-                </ButtonLink>
-                <ButtonLink
-                  size="lg"
-                  href="https://demo.saas-ui.dev"
-                  variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: 'common',
-                        transitionDuration: 'normal',
-                        '.chakra-button:hover &': {
-                          transform: 'translate(5px)',
-                        },
-                      }}
-                    />
-                  }
-                >
-                  View demo
-                </ButtonLink>
-              </ButtonGroup>
-            </FallInPlace>
-          </Hero>
-          <Box
-            height="600px"
-            position="absolute"
-            display={{ base: 'none', lg: 'block' }}
-            left={{ lg: '60%', xl: '55%' }}
-            width="80vw"
-            maxW="1100px"
-            margin="0 auto"
-          >
-            <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
-                <Image
-                  src="/static/screenshots/list.png"
-                  width={1200}
-                  height={762}
-                  alt="Screenshot of a ListPage in Saas UI Pro"
-                  quality="75"
-                  priority
-                />
-              </Box>
-            </FallInPlace>
-          </Box>
-        </Stack>
-      </Container>
-
-      <Features
-        id="benefits"
-        columns={[1, 2, 4]}
-        iconSize={4}
-        innerWidth="container.xl"
-        pt="20"
-        features={[
-          {
-            title: 'Accessible',
-            icon: FiSmile,
-            description: 'All components strictly follow WAI-ARIA standards.',
-            iconPosition: 'left',
-            delay: 0.6,
-          },
-          {
-            title: 'Themable',
-            icon: FiSliders,
-            description:
-              'Fully customize all components to your brand with theme support and style props.',
-            iconPosition: 'left',
-            delay: 0.8,
-          },
-          {
-            title: 'Composable',
-            icon: FiGrid,
-            description:
-              'Compose components to fit your needs and mix them together to create new ones.',
-            iconPosition: 'left',
-            delay: 1,
-          },
-          {
-            title: 'Productive',
-            icon: FiThumbsUp,
-            description:
-              'Designed to reduce boilerplate and fully typed, build your product at speed.',
-            iconPosition: 'left',
-            delay: 1.1,
-          },
-        ]}
-        reveal={FallInPlace}
-      />
-    </Box>
+    <>
+      <SafeTalkHero />
+      <HeroBenefits />
+    </>
   )
 }
 
-const HighlightsSection = () => {
-  const { value, onCopy, hasCopied } = useClipboard('yarn add @saas-ui/react')
+const ProblemSolutionSection: React.FC = () => {
+  return <ProblemSolution />
+}
 
+const TargetAudienceSection: React.FC = () => {
+  return <TargetAudience />
+}
+
+const TrustSecuritySection: React.FC = () => {
+  return <TrustSecurity />
+}
+
+const TeamSection: React.FC = () => {
+  return <Team />
+}
+
+const HighlightsSection = () => {
   return (
     <Highlights>
-      <HighlightsItem colSpan={[1, null, 2]} title="Core components">
+      <HighlightsItem colSpan={[1, null, 2]} title="Dlaczego Safe Talk?">
         <VStack alignItems="flex-start" spacing="8">
           <Text color="muted" fontSize="xl">
-            Get started for free with <Em>30+ open source components</Em>.
-            Including authentication screens with Clerk, Supabase and Magic.
-            Fully functional forms with React Hook Form. Data tables with React
-            Table.
+            Safe Talk to <Em>pierwsza w Polsce aplikacja</Em> oferująca ochronę przed 
+            oszustwami telefonicznymi w czasie rzeczywistym. Nasze rozwiązanie wykorzystuje 
+            najnowsze technologie AI i uczenia maszynowego.
           </Text>
 
-          <Flex
-            rounded="full"
-            borderWidth="1px"
-            flexDirection="row"
-            alignItems="center"
-            py="1"
-            ps="8"
-            pe="2"
-            bg="primary.900"
-            _dark={{ bg: 'gray.900' }}
-          >
-            <Box>
-              <Text color="yellow.400" display="inline">
-                yarn add
-              </Text>{' '}
-              <Text color="cyan.300" display="inline">
-                @saas-ui/react
-              </Text>
-            </Box>
-            <IconButton
-              icon={hasCopied ? <FiCheck /> : <FiCopy />}
-              aria-label="Copy install command"
-              onClick={onCopy}
-              variant="ghost"
-              ms="4"
-              isRound
-              color="white"
-            />
-          </Flex>
+          <VStack alignItems="flex-start" spacing="4" w="full">
+            <HStack spacing="3">
+              <RealTimeAnalysisIcon size={20} />
+              <Text fontWeight="semibold">Ochrona w czasie rzeczywistym</Text>
+            </HStack>
+            <HStack spacing="3">
+              <AIDetectionIcon size={20} />
+              <Text fontWeight="semibold">Reakcja w czasie &lt;1 sekundy</Text>
+            </HStack>
+            <HStack spacing="3">
+              <PrivacyProtectionIcon size={20} />
+              <Text fontWeight="semibold">100% prywatności rozmów</Text>
+            </HStack>
+          </VStack>
         </VStack>
       </HighlightsItem>
-      <HighlightsItem title="Solid foundations">
+      <HighlightsItem title="Sprawdzona technologia">
         <Text color="muted" fontSize="lg">
-          We don&apos;t like to re-invent the wheel, neither should you. We
-          selected the most productive and established tools in the scene and
-          build Saas UI on top of it.
+          Nasze algorytmy zostały wytrenowane na tysiącach przykładów oszustw 
+          telefonicznych z Polski. System stale się uczy i dostosowuje do nowych 
+          technik stosowanych przez przestępców.
         </Text>
       </HighlightsItem>
       <HighlightsTestimonialItem
@@ -321,92 +229,74 @@ const FeaturesSection = () => {
         <Heading
           lineHeight="short"
           fontSize={['2xl', null, '4xl']}
-          textAlign="left"
+          textAlign="center"
           as="p"
+          fontFamily="Gabarito"
+          fontWeight="bold"
         >
-          Not your standard
-          <Br /> dashboard template.
+          Zaawansowana ochrona
+          <Br /> w czasie rzeczywistym
         </Heading>
       }
       description={
         <>
-          Saas UI Pro includes everything you need to build modern frontends.
+          Safe Talk wykorzystuje najnowsze technologie AI do wykrywania oszustw telefonicznych.
           <Br />
-          Use it as a template for your next product or foundation for your
-          design system.
+          Nasza aplikacja chroni Cię przed stratami finansowymi i kradzieżą danych osobowych.
         </>
       }
-      align="left"
+      align="center"
       columns={[1, 2, 3]}
-      iconSize={4}
+      iconSize={6}
+      reveal={FallInPlace}
       features={[
         {
-          title: '#components.',
-          icon: FiBox,
+          title: 'Analiza w czasie rzeczywistym',
+          icon: RealTimeAnalysisIcon,
           description:
-            'All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.',
+            'Rozmowy są analizowane na bieżąco podczas trwania połączenia. Otrzymujesz ostrzeżenie zanim oszust zdąży Cię oszukać.',
           variant: 'inline',
+          delay: 0.1,
         },
         {
-          title: 'Starterkits.',
-          icon: FiLock,
+          title: 'Wykrywanie AI',
+          icon: AIDetectionIcon,
           description:
-            'Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.',
+            'Zaawansowane algorytmy uczenia maszynowego rozpoznają wzorce oszustów i nietypowe zachowania rozmówców.',
           variant: 'inline',
+          delay: 0.2,
         },
         {
-          title: 'Documentation.',
-          icon: FiSearch,
+          title: 'Ochrona prywatności',
+          icon: PrivacyProtectionIcon,
           description:
-            'Extensively documented, including storybooks, best practices, use-cases and examples.',
+            'Twoje rozmowy są analizowane lokalnie na urządzeniu. Nie przechowujemy nagrań ani danych osobowych.',
           variant: 'inline',
+          delay: 0.3,
         },
         {
-          title: 'Onboarding.',
-          icon: FiUserPlus,
+          title: 'Inteligentne ostrzeżenia',
+          icon: SmartAlertsIcon,
           description:
-            'Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.',
+            'System wysyła dyskretne powiadomienia o potencjalnym zagrożeniu bez przerywania rozmowy.',
           variant: 'inline',
+          delay: 0.4,
         },
         {
-          title: 'Feature flags.',
-          icon: FiFlag,
+          title: 'Rozpoznawanie głosu',
+          icon: VoiceRecognitionIcon,
           description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
+            'Technologia analizy głosu wykrywa emocjonalne manipulacje i techniki wywierania presji.',
           variant: 'inline',
+          delay: 0.5,
         },
         {
-          title: 'Upselling.',
-          icon: FiTrendingUp,
+          title: 'Ochrona dla wszystkich',
+          icon: UniversalProtectionIcon,
           description:
-            '#components and hooks for upgrade flows designed to make upgrading inside your app frictionless.',
+            'Aplikacja jest zaprojektowana tak, aby chronić osoby w każdym wieku - od seniorów po młodych dorosłych.',
           variant: 'inline',
-        },
-        {
-          title: 'Themes.',
-          icon: FiToggleLeft,
-          description:
-            'Includes multiple themes with darkmode support, always have the perfect starting point for your next project.',
-          variant: 'inline',
-        },
-        {
-          title: 'Generators.',
-          icon: FiTerminal,
-          description:
-            'Extend your design system while maintaininig code quality and consistency with built-in generators.',
-          variant: 'inline',
-        },
-        {
-          title: 'Monorepo.',
-          icon: FiCode,
-          description: (
-            <>
-              All code is available as packages in a high-performance{' '}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
-            </>
-          ),
-          variant: 'inline',
+          delay: 0.6,
         },
       ]}
     />
@@ -433,11 +323,17 @@ const TestimonialsSection = () => {
     >
       <>
         {columns.map((column, i) => (
-          <Stack key={i} spacing="8">
-            {column.map((t, i) => (
-              <Testimonial key={i} {...t} />
-            ))}
-          </Stack>
+          <StaggerContainer key={i} staggerDelay={0.2} delayChildren={i * 0.1}>
+            <Stack spacing="8">
+              {column.map((t, j) => (
+                <StaggerItem key={j}>
+                  <HoverLift>
+                    <Testimonial {...t} />
+                  </HoverLift>
+                </StaggerItem>
+              ))}
+            </Stack>
+          </StaggerContainer>
         ))}
       </>
     </Testimonials>
@@ -455,7 +351,11 @@ const PricingSection = () => {
 }
 
 const FaqSection = () => {
-  return <Faq {...faq} />
+  return <EnhancedFaq {...faq} />
+}
+
+const ContactSection: React.FC = () => {
+  return <Contact />
 }
 
 export default Home

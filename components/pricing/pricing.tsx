@@ -7,6 +7,7 @@ import {
   StackProps,
   Text,
   VStack,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { FiCheck } from 'react-icons/fi'
 
@@ -53,9 +54,9 @@ export const Pricing: React.FC<PricingProps> = (props) => {
               sx={
                 plan.isRecommended
                   ? {
-                      borderColor: 'primary.500',
+                      borderColor: 'safeTalk.turquoise.500',
                       _dark: {
-                        borderColor: 'primary.500',
+                        borderColor: 'safeTalk.turquoise.500',
                         bg: 'blackAlpha.300',
                       },
                     }
@@ -71,7 +72,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
                   ),
                 )}
               </PricingFeatures>
-              <ButtonLink colorScheme="primary" {...plan.action}>
+              <ButtonLink colorScheme="teal" {...plan.action}>
                 {plan.action.label || 'Sign Up'}
               </ButtonLink>
             </PricingBox>
@@ -106,7 +107,7 @@ export interface PricingFeatureProps {
 }
 
 const PricingFeature: React.FC<PricingFeatureProps> = (props) => {
-  const { title, iconColor = 'primary.500' } = props
+  const { title, iconColor = 'safeTalk.turquoise.500' } = props
   return (
     <HStack>
       <Icon as={FiCheck} color={iconColor} />
@@ -134,17 +135,17 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
       flex="1 0"
       alignItems="stretch"
       border="1px solid"
-      borderColor="gray.400"
+      borderColor={useColorModeValue('safeTalk.turquoise.200', 'safeTalk.turquoise.600')}
       _dark={{
-        bg: 'blackAlpha.300',
-        borderColor: 'gray.800',
+        bg: 'safeTalk.navy.800',
+        borderColor: 'safeTalk.turquoise.600',
       }}
       {...rest}
     >
       <Heading as="h3" size="md" fontWeight="bold" fontSize="lg" mb="2">
         {title}
       </Heading>
-      <Box color="muted">{description}</Box>
+      <Box color={useColorModeValue('safeTalk.navy.300', 'safeTalk.navy.200')}>{description}</Box>
       <Box fontSize="2xl" fontWeight="bold" py="4">
         {price}
       </Box>
