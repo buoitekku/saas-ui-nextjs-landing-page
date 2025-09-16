@@ -32,30 +32,32 @@ const ScrollDepthTracker = lazy(() =>
 const TimeOnPageTracker = lazy(() => 
   import('#components/analytics/conversion-tracking').then(m => ({ default: m.TimeOnPageTracker }))
 )
-import { AppShowcase } from '#components/app-showcase'
-import { Contact } from '#components/contact'
-import { EnhancedFaq } from '#components/faq'
-import { FeatureDemos } from '#components/feature-demos'
-import { FocusDemo } from '#components/focus-demo'
-import { VisualHierarchyDemo } from '#components/visual-hierarchy-demo'
-import { StatusDemo } from '#components/status-demo'
+// Critical above-the-fold components (loaded immediately)
 import { MobileOptimization } from '#components/mobile-optimization'
 import { Features } from '#components/features'
 import { SafeTalkHero, HeroBenefits } from '#components/hero'
-import {
-  Highlights,
-  HighlightsItem,
-  HighlightsTestimonialItem,
-} from '#components/highlights'
 import { FallInPlace } from '#components/motion/fall-in-place'
 import { ProblemSolution } from '#components/problem-solution/problem-solution'
-import { Pricing } from '#components/pricing/pricing'
-import { TargetAudience } from '#components/target-audience'
-import { Team } from '#components/team'
-import { Testimonial, Testimonials } from '#components/testimonials'
-import { TrustSecurity } from '#components/trust-security'
 import { Em } from '#components/typography'
 import { StaggerContainer, StaggerItem, HoverLift } from '#components/motion'
+
+// Below-the-fold components (lazy loaded for better performance)
+const AppShowcase = lazy(() => import('#components/app-showcase').then(m => ({ default: m.AppShowcase })))
+const Contact = lazy(() => import('#components/contact').then(m => ({ default: m.Contact })))
+const EnhancedFaq = lazy(() => import('#components/faq').then(m => ({ default: m.EnhancedFaq })))
+const FeatureDemos = lazy(() => import('#components/feature-demos').then(m => ({ default: m.FeatureDemos })))
+const FocusDemo = lazy(() => import('#components/focus-demo').then(m => ({ default: m.FocusDemo })))
+const VisualHierarchyDemo = lazy(() => import('#components/visual-hierarchy-demo').then(m => ({ default: m.VisualHierarchyDemo })))
+const StatusDemo = lazy(() => import('#components/status-demo').then(m => ({ default: m.StatusDemo })))
+const Pricing = lazy(() => import('#components/pricing/pricing').then(m => ({ default: m.Pricing })))
+const TargetAudience = lazy(() => import('#components/target-audience').then(m => ({ default: m.TargetAudience })))
+const Team = lazy(() => import('#components/team').then(m => ({ default: m.Team })))
+const Testimonials = lazy(() => import('#components/testimonials').then(m => ({ default: m.Testimonials })))
+const Testimonial = lazy(() => import('#components/testimonials').then(m => ({ default: m.Testimonial })))
+const TrustSecurity = lazy(() => import('#components/trust-security').then(m => ({ default: m.TrustSecurity })))
+const Highlights = lazy(() => import('#components/highlights').then(m => ({ default: m.Highlights })))
+const HighlightsItem = lazy(() => import('#components/highlights').then(m => ({ default: m.HighlightsItem })))
+const HighlightsTestimonialItem = lazy(() => import('#components/highlights').then(m => ({ default: m.HighlightsTestimonialItem })))
 import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
@@ -81,9 +83,13 @@ const Home: NextPage = () => {
 
       <FeaturesSection />
 
-      <AppShowcase />
+      <Suspense fallback={<Box h="400px" />}>
+        <AppShowcase />
+      </Suspense>
 
-      <FeatureDemos />
+      <Suspense fallback={<Box h="300px" />}>
+        <FeatureDemos />
+      </Suspense>
 
       <TargetAudienceSection />
 
@@ -91,19 +97,33 @@ const Home: NextPage = () => {
 
       <TeamSection />
 
-      <TestimonialsSection />
+      <Suspense fallback={<Box h="500px" />}>
+        <TestimonialsSection />
+      </Suspense>
 
-      <PricingSection />
+      <Suspense fallback={<Box h="400px" />}>
+        <PricingSection />
+      </Suspense>
 
-      <FaqSection />
+      <Suspense fallback={<Box h="600px" />}>
+        <FaqSection />
+      </Suspense>
 
-      <FocusDemo />
+      <Suspense fallback={<Box h="200px" />}>
+        <FocusDemo />
+      </Suspense>
 
-      <VisualHierarchyDemo />
+      <Suspense fallback={<Box h="200px" />}>
+        <VisualHierarchyDemo />
+      </Suspense>
 
-      <StatusDemo />
+      <Suspense fallback={<Box h="200px" />}>
+        <StatusDemo />
+      </Suspense>
 
-      <ContactSection />
+      <Suspense fallback={<Box h="500px" />}>
+        <ContactSection />
+      </Suspense>
     </Box>
   )
 }

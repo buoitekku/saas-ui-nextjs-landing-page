@@ -125,9 +125,6 @@
 
   - [ ] Create custom icons for features and benefits
 
-
-
-
   - _Requirements: 1.1, 1.2, 5.1, 5.2_
 
 - [x] 15. Implement component exports and clean imports

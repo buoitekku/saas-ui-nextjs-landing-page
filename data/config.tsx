@@ -13,22 +13,80 @@ import {
   VoiceRecognitionIcon
 } from '#components/safe-talk-icons'
 
-const siteConfig = {
+// Site configuration with TypeScript interfaces for better type safety
+interface SiteConfig {
+  logo: React.ComponentType<any>
+  seo: NextSeoProps
+  termsUrl: string
+  privacyUrl: string
+  header: {
+    links: Array<{
+      id?: string
+      label: string
+      href?: string
+      variant?: string
+    }>
+  }
+  footer: {
+    copyright: React.ReactNode
+    links: Array<{
+      href: string
+      label: React.ReactNode
+      'aria-label': string
+    }>
+  }
+  hero: {
+    title: string
+    subtitle: string
+    cta: {
+      primary: { label: string; href: string }
+      secondary: { label: string; href: string }
+    }
+    stats: Array<{ value: string; label: string }>
+  }
+  features: {
+    main: Array<{
+      icon: React.ComponentType<any>
+      title: string
+      description: string
+    }>
+  }
+  audiences: Array<{
+    title: string
+    description: string
+    features: string[]
+    cta: string
+  }>
+  signup: {
+    title: string
+    features: Array<{
+      icon: React.ComponentType<any>
+      title: string
+      description: string
+    }>
+  }
+}
+
+const siteConfig: SiteConfig = {
   logo: SafeTalkLogoHorizontal,
   seo: {
     title: 'Safe Talk - Ochrona przed oszustwami telefonicznymi w czasie rzeczywistym',
     description: 'Aplikacja AI chroniąca przed oszustwami telefonicznymi w czasie rzeczywistym. Wykrywaj podejrzane rozmowy zanim dojdzie do wyłudzenia danych lub pieniędzy.',
     keywords: [
-      'ochrona przed oszustwami',
-      'oszustwa telefoniczne',
-      'AI wykrywanie oszustw',
-      'bezpieczeństwo rozmów',
-      'ochrona przed wyłudzeniami',
-      'Safe Talk',
-      'analiza rozmów',
-      'cyberbezpieczeństwo',
-      'ochrona seniorów',
-      'bezpieczne rozmowy'
+      // Primary keywords
+      'ochrona przed oszustwami telefonicznymi',
+      'wykrywanie oszustw AI',
+      'Safe Talk aplikacja',
+      // Secondary keywords
+      'oszustwa na wnuczka',
+      'oszustwa bankowe telefon',
+      'cyberbezpieczeństwo rozmowy',
+      'ochrona seniorów oszustwa',
+      'analiza rozmów czasie rzeczywistym',
+      // Long-tail keywords
+      'jak chronić się przed oszustami telefonicznymi',
+      'aplikacja wykrywająca oszustwa telefoniczne',
+      'bezpieczne rozmowy telefoniczne AI'
     ],
     openGraph: {
       type: 'website',

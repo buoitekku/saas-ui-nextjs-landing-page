@@ -135,7 +135,6 @@ export const useStatusManagement = (
           duration: type === 'error' ? null : 3000,
           isClosable: true,
           position: toastPosition,
-          containerStyle: toastStyle,
         });
       }
 
@@ -235,14 +234,12 @@ export const useStatusManagement = (
 
   // Show toast manually
   const showToast = useCallback((type: StatusType, message: string, options: any = {}) => {
-    const toastStyle = createToastStyle(type);
     toast({
       title: message,
       status: type === 'error' ? 'error' : type === 'success' ? 'success' : type === 'warning' ? 'warning' : 'info',
       duration: type === 'error' ? null : 3000,
       isClosable: true,
       position: toastPosition,
-      containerStyle: toastStyle,
       ...options,
     });
   }, [toast, toastPosition]);
