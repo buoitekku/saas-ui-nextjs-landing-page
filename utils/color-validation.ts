@@ -230,6 +230,16 @@ export const validateColorCombination = (
   const issues: string[] = [];
   const recommendations: string[] = [];
 
+  if (backgroundColor === 'transparent' || textColor === 'transparent') {
+    return {
+      brandCompliant: validateBrandColor(backgroundColor) && validateBrandColor(textColor),
+      accessible: false,
+      contrastRatio: 0,
+      issues: ['Cannot determine contrast ratio with a transparent color.'],
+      recommendations: ['Avoid using "transparent" for color accessibility checks.'],
+    };
+  }
+
   // Check brand compliance
   const bgBrandCompliant = validateBrandColor(backgroundColor);
   const textBrandCompliant = validateBrandColor(textColor);
