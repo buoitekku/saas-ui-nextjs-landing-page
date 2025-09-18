@@ -7,6 +7,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import { Link, LinkProps } from '@saas-ui/react'
 
@@ -19,7 +20,7 @@ export interface FooterProps extends BoxProps {
 export const Footer: React.FC<FooterProps> = (props) => {
   const { columns = 2, ...rest } = props
   return (
-    <Box bg="white" _dark={{ bg: 'gray.900' }} {...rest}>
+    <Box bg="white" _dark={{ bg: 'safeTalk.navy.900' }} {...rest}>
       <Container maxW="container.2xl" px="8" py="8">
         <SimpleGrid columns={columns}>
           <Stack spacing="8">
@@ -27,7 +28,7 @@ export const Footer: React.FC<FooterProps> = (props) => {
               <Flex>
                 <Box as={siteConfig.logo} flex="1" height="32px" />
               </Flex>
-              <Text fontSize="md" color="muted">
+              <Text fontSize="md" color={useColorModeValue('safeTalk.navy.300', 'safeTalk.navy.200')}>
                 {siteConfig.seo.description}
               </Text>
             </Stack>
@@ -60,7 +61,7 @@ export const Copyright: React.FC<CopyrightProps> = ({
     content = `&copy; ${new Date().getFullYear()} - ${title}`
   }
   return (
-    <Text color="muted" fontSize="sm">
+    <Text color={useColorModeValue('safeTalk.navy.300', 'safeTalk.navy.200')} fontSize="sm">
       {content || children}
     </Text>
   )
@@ -70,7 +71,7 @@ export const FooterLink: React.FC<LinkProps> = (props) => {
   const { children, ...rest } = props
   return (
     <Link
-      color="muted"
+      color={useColorModeValue('safeTalk.navy.300', 'safeTalk.navy.200')}
       fontSize="sm"
       textDecoration="none"
       _hover={{

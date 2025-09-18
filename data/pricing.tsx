@@ -1,113 +1,108 @@
 import { HStack, Text } from '@chakra-ui/react'
 
 export default {
-  title: 'Pricing for every stage',
-  description:
-    'Pay once and get life-time access to our high quality components.',
+  title: 'Cennik dostosowany do Twoich potrzeb',
+  description: 'Wybierz plan odpowiedni dla siebie. Podstawowa ochrona jest darmowa dla wszystkich.',
   plans: [
     {
-      id: 'oss',
-      title: 'Open Source',
-      description: 'Basic compoents, perfect to get started.',
-      price: 'Free',
+      id: 'free',
+      title: 'Darmowy',
+      description: 'Podstawowa ochrona przed oszustwami dla użytkowników indywidualnych.',
+      price: 'Darmowy',
       features: [
         {
-          title: 'MIT License',
+          title: 'Wykrywanie podstawowych oszustw',
         },
         {
-          title: 'Authentication (Clerk/Supabase/Magic)',
+          title: 'Ostrzeżenia w czasie rzeczywistym',
         },
         {
-          title: 'Form (react-hook-form)',
+          title: 'Ochrona prywatności',
         },
         {
-          title: 'Modals manager',
+          title: 'Wsparcie społeczności',
         },
         {
-          title: 'Hotkeys',
-        },
-        {
-          title: 'Web3 components',
-        },
-        {
-          title: 'And much more...',
+          title: 'Aktualizacje bezpieczeństwa',
         },
       ],
       action: {
-        href: '#',
+        href: '#download',
+        children: 'Pobierz za darmo',
       },
     },
     {
-      id: 'bootstrap',
-      title: 'Bootstrap',
-      description: 'Complete frontend stack for bootstrappers and small teams.',
-      price: 'Free',
+      id: 'premium',
+      title: 'Premium',
+      description: 'Zaawansowana ochrona z dodatkowymi funkcjami dla wymagających użytkowników.',
+      price: '19 zł/miesiąc',
       isRecommended: true,
       features: [
         {
-          title: 'One project',
+          title: 'Wszystko z planu Darmowego',
         },
         {
-          title: 'One developer',
+          title: 'Zaawansowane wykrywanie oszustw',
         },
         {
-          title: 'Advanced components',
+          title: 'Szczegółowe raporty i statystyki',
         },
         {
-          title: 'Multiple themes',
+          title: 'Ochrona dla całej rodziny (do 5 urządzeń)',
         },
         {
-          title: 'Next.js and Electron boilerplates',
+          title: 'Priorytetowe wsparcie techniczne',
         },
         {
-          title: 'Private discord community',
+          title: 'Personalizowane ostrzeżenia',
         },
         {
-          title: '1 year of updates',
-        },
-        null,
-        {
-          title: 'Private beta access',
-          iconColor: 'green.500',
+          title: 'Historia wykrytych zagrożeń',
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Single%20license',
+        href: '#signup',
+        children: 'Rozpocznij 30-dniowy trial',
       },
     },
     {
-      id: 'startup',
-      title: 'Startup',
-      description: 'Unlimited license for growing teams.',
+      id: 'business',
+      title: 'Biznes',
+      description: 'Kompleksowe rozwiązanie dla firm i organizacji.',
       price: (
         <HStack>
-          <Text textDecoration="line-through" fontSize="sm" color="gray.400">
-            €999,-
-          </Text>
-          <Text>€499,-</Text>
+          <Text>Od 99 zł/miesiąc</Text>
         </HStack>
       ),
       features: [
         {
-          title: 'Unlimited projects',
+          title: 'Wszystko z planu Premium',
         },
         {
-          title: 'Unlimited developers',
+          title: 'Nieograniczona liczba użytkowników',
         },
         {
-          title: '1 year of updates',
+          title: 'Centralne zarządzanie',
         },
         {
-          title: 'Everything from Bootstrap',
+          title: 'Integracje z systemami firmowymi',
         },
-        null,
         {
-          title: 'Private beta access',
-          iconColor: 'green.500',
+          title: 'Dedykowane wsparcie 24/7',
+        },
+        {
+          title: 'Szkolenia dla zespołu',
+        },
+        {
+          title: 'Raportowanie dla zarządu',
+        },
+        {
+          title: 'SLA 99.9% dostępności',
         },
       ],
       action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
+        href: '#contact',
+        children: 'Skontaktuj się z nami',
       },
     },
   ],

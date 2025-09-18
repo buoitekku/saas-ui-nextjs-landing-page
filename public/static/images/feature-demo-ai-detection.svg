@@ -1,0 +1,64 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="200" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#0f172a">Wykrywanie AI</text>
+  
+  <!-- Input speech bubble -->
+  <rect x="30" y="60" width="150" height="60" rx="15" fill="#e0f2fe"/>
+  <text x="105" y="80" text-anchor="middle" font-size="11" fill="#0369a1">"Dzwonię z banku, potrzebuję</text>
+  <text x="105" y="95" text-anchor="middle" font-size="11" fill="#0369a1">Pana numer karty do</text>
+  <text x="105" y="110" text-anchor="middle" font-size="11" fill="#0369a1">weryfikacji konta"</text>
+  
+  <!-- Arrow to AI -->
+  <path d="M180 90 L220 90" stroke="#8974B2" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- AI Brain -->
+  <circle cx="250" cy="90" r="30" fill="white" stroke="#8974B2" stroke-width="2"/>
+  <path d="M235 85 C233 81 237 77 243 79 C245 75 253 75 255 79 C261 77 265 81 263 85 C265 87 265 91 263 93 C265 97 261 101 255 99 C253 103 245 103 243 99 C237 101 233 97 235 93 C233 91 233 87 235 85 Z" 
+        fill="#8974B2" opacity="0.3"/>
+  
+  <!-- Neural network nodes -->
+  <circle cx="242" cy="85" r="1.5" fill="#8974B2"/>
+  <circle cx="250" cy="83" r="1.5" fill="#8974B2"/>
+  <circle cx="258" cy="85" r="1.5" fill="#8974B2"/>
+  <circle cx="245" cy="95" r="1.5" fill="#8974B2"/>
+  <circle cx="255" cy="95" r="1.5" fill="#8974B2"/>
+  
+  <!-- Analysis patterns -->
+  <rect x="300" y="50" width="80" height="80" rx="10" fill="white" stroke="#C5D54E" stroke-width="2"/>
+  <text x="340" y="70" text-anchor="middle" font-size="10" font-weight="bold" fill="#C5D54E">Wzorce</text>
+  
+  <!-- Pattern indicators -->
+  <rect x="310" y="80" width="60" height="8" rx="4" fill="#ef4444" opacity="0.7"/>
+  <text x="315" y="95" font-size="8" fill="#dc2626">Prośba o dane</text>
+  
+  <rect x="310" y="100" width="45" height="8" rx="4" fill="#f59e0b" opacity="0.7"/>
+  <text x="315" y="115" font-size="8" fill="#d97706">Presja czasowa</text>
+  
+  <!-- Detection result -->
+  <rect x="100" y="160" width="200" height="80" rx="15" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="200" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="#dc2626">OSZUSTWO WYKRYTE</text>
+  <text x="200" y="205" text-anchor="middle" font-size="12" fill="#7f1d1d">Pewność: 95%</text>
+  <text x="200" y="225" text-anchor="middle" font-size="10" fill="#991b1b">Typowe dla oszustów bankowych</text>
+  
+  <!-- Processing indicators -->
+  <circle cx="200" cy="140" r="3" fill="#8974B2">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="210" cy="140" r="3" fill="#8974B2">
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="220" cy="140" r="3" fill="#8974B2">
+    <animate attributeName="opacity" values="1;0.3;1" dur="1s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#8974B2" />
+    </marker>
+  </defs>
+</svg>

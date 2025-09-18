@@ -1,0 +1,28 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Privacy Protection icon with shield and lock -->
+  <circle cx="32" cy="32" r="30" fill="#88C594" opacity="0.1"/>
+  
+  <!-- Shield shape -->
+  <path d="M32 8 L48 16 L48 32 C48 44 32 56 32 56 C32 56 16 44 16 32 L16 16 L32 8 Z" 
+        fill="white" stroke="#88C594" stroke-width="2"/>
+  
+  <!-- Lock inside shield -->
+  <rect x="26" y="28" width="12" height="10" rx="2" fill="#88C594" opacity="0.2"/>
+  <rect x="27" y="30" width="10" height="6" rx="1" fill="#88C594"/>
+  
+  <!-- Lock shackle -->
+  <path d="M29 28 L29 24 C29 22 31 20 32 20 C33 20 35 22 35 24 L35 28" 
+        fill="none" stroke="#88C594" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Privacy indicators around shield -->
+  <circle cx="20" cy="20" r="2" fill="#71C6DA" opacity="0.6"/>
+  <circle cx="44" cy="20" r="2" fill="#71C6DA" opacity="0.6"/>
+  <circle cx="20" cy="44" r="2" fill="#71C6DA" opacity="0.6"/>
+  <circle cx="44" cy="44" r="2" fill="#71C6DA" opacity="0.6"/>
+  
+  <!-- Data protection lines -->
+  <path d="M18 18 L22 22" stroke="#71C6DA" stroke-width="1" opacity="0.4"/>
+  <path d="M42 22 L46 18" stroke="#71C6DA" stroke-width="1" opacity="0.4"/>
+  <path d="M18 46 L22 42" stroke="#71C6DA" stroke-width="1" opacity="0.4"/>
+  <path d="M42 42 L46 46" stroke="#71C6DA" stroke-width="1" opacity="0.4"/>
+</svg>

@@ -20,6 +20,9 @@ dependencies:
   '@fontsource-variable/inter':
     specifier: ^5.1.0
     version: 5.1.0
+  '@fontsource/gabarito':
+    specifier: ^5.2.7
+    version: 5.2.7
   '@saas-ui/auth':
     specifier: ^3.4.0
     version: 3.4.0(@chakra-ui/react@2.10.1)(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1)
@@ -38,6 +41,9 @@ dependencies:
   next:
     specifier: ^14.2.14
     version: 14.2.14(@babel/core@7.25.7)(react-dom@18.3.1)(react@18.3.1)
+  next-seo:
+    specifier: ^6.8.0
+    version: 6.8.0(next@14.2.14)(react-dom@18.3.1)(react@18.3.1)
   react:
     specifier: 18.3.1
     version: 18.3.1
@@ -53,6 +59,9 @@ dependencies:
   velite:
     specifier: ^0.1.1
     version: 0.1.1
+  zod:
+    specifier: ^4.1.8
+    version: 4.1.8
 
 devDependencies:
   '@babel/core':
@@ -2011,6 +2020,10 @@ packages:
 
   /@fontsource-variable/inter@5.1.0:
     resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
+    dev: false
+
+  /@fontsource/gabarito@5.2.7:
+    resolution: {integrity: sha512-eJn9oWLluC36bZtOv3n53+UPYS2IgSOu8oEp5pvgYdk9OCmjaAF0uXpw1gauCH+PgqzdSNO7nKzxfsQburPjfw==}
     dev: false
 
   /@hookform/resolvers@3.9.0(react-hook-form@7.53.0):
@@ -5656,6 +5669,18 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /next-seo@6.8.0(next@14.2.14)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-zcxaV67PFXCSf8e6SXxbxPaOTgc8St/esxfsYXfQXMM24UESUVSXFm7f2A9HMkAwa0Gqn4s64HxYZAGfdF4Vhg==}
+    peerDependencies:
+      next: ^8.1.1-canary.54 || >=9.0.0
+      react: '>=16.0.0'
+      react-dom: '>=16.0.0'
+    dependencies:
+      next: 14.2.14(@babel/core@7.25.7)(react-dom@18.3.1)(react@18.3.1)
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
   /next@14.2.14(@babel/core@7.25.7)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-Q1coZG17MW0Ly5x76shJ4dkC23woLAhhnDnw+DfTc7EpZSGuWrlsZ3bZaO8t6u1Yu8FVfhkqJE+U8GC7E0GLPQ==}
     engines: {node: '>=18.17.0'}
@@ -6922,6 +6947,10 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zod@4.1.8:
+    resolution: {integrity: sha512-5R1P+WwQqmmMIEACyzSvo4JXHY5WiAFHRMg+zBZKgKS+Q1viRa0C1hmUKtHltoIFKtIdki3pRxkmpP74jnNYHQ==}
+    dev: false
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}

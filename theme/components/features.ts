@@ -53,17 +53,28 @@ export const Feature = {
     container: {
       alignItems: 'flex-start',
       flexDirection: 'column',
+      transition: 'all 0.2s ease-in-out',
+      cursor: 'pointer',
+      p: 4,
+      borderRadius: 'lg',
+      _hover: {
+        transform: 'translateY(-2px)',
+        shadow: 'lg',
+        bg: mode('white', 'gray.700')(props),
+      },
     },
     title: {
       as: 'h4',
       fontSize: 'lg',
       fontWeight: '700',
       mb: 2,
+      transition: 'color 0.2s ease-in-out',
     },
     description: {
       fontSize: 'lg',
       fontWeight: 'normal',
       color: mode('gray.500', 'gray.400')(props),
+      transition: 'color 0.2s ease-in-out',
     },
     icon: {
       mb: 4,
@@ -75,6 +86,12 @@ export const Feature = {
       )(props),
       color: mode('primary.700', 'primary.400')(props),
       float: 'left',
+      transition: 'all 0.2s ease-in-out',
+      _groupHover: {
+        transform: 'scale(1.1)',
+        bg: mode('primary.500', 'primary.400')(props),
+        color: 'white',
+      },
     },
   }),
   variants: {

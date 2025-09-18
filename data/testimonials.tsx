@@ -1,40 +1,69 @@
 export default {
-  title: 'Loved by tech people',
+  title: 'Zaufali nam użytkownicy i eksperci',
   items: [
     {
-      name: 'Eelco Wiersma',
-      description: 'Founder Saas UI',
-      avatar:
-        'https://pbs.twimg.com/profile_images/1470742164024008706/k-eXHtu0_normal.jpg',
+      name: 'Anna Kowalska',
+      description: 'Emerytka, 67 lat',
+      avatar: '/static/images/avatar-senior.jpg',
       children: (
         <>
-          “With SaaS UI I am able to produce high quality dashboard apps and
-          internal tools without a lot of design skills. The ROI really is
-          amazing.”
+          "Safe Talk uratował mnie przed oszustem, który podawał się za pracownika banku. 
+          Aplikacja ostrzegła mnie już po pierwszych słowach rozmówcy. Czuję się teraz bezpieczniej."
         </>
       ),
     },
     {
-      name: 'Caroline Yahaya',
-      description: 'Fullstack Developer',
-      avatar: '/static/images/avatar2.jpg',
+      name: 'Dr Marcin Nowak',
+      description: 'Ekspert ds. cyberbezpieczeństwa',
+      avatar: '/static/images/avatar-expert.jpg',
       children: (
         <>
-          “Saas UI allows me to build beautiful and functional UI super fast.
-          The components are very well thought out and the Next.js starter kit
-          saved me at least 100 hours of work.”
+          "Safe Talk to przełomowe rozwiązanie w walce z oszustwami telefonicznymi. 
+          Analiza w czasie rzeczywistym i ochrona prywatności to dokładnie to, czego potrzebowaliśmy."
         </>
       ),
     },
     {
-      name: 'Alberto Vazquez',
-      description: 'Frontend Engineer',
-      avatar: '/static/images/avatar3.jpg',
+      name: 'Tomasz Wiśniewski',
+      description: 'Dyrektor IT, TechCorp',
+      avatar: '/static/images/avatar-business.jpg',
       children: (
         <>
-          “Saas UI gave us a perfect starting point for our project, having the
-          storybooks already set up with beautifully crafted components and
-          fully mocked pages was a treat.”
+          "Wdrożyliśmy Safe Talk w naszej firmie po serii prób oszustw na pracownikach. 
+          Od tego czasu nie mieliśmy ani jednego udanego ataku. ROI jest niesamowity."
+        </>
+      ),
+    },
+    {
+      name: 'Maria Zielińska',
+      description: 'Matka dwójki dzieci',
+      avatar: '/static/images/avatar-family.jpg',
+      children: (
+        <>
+          "Zainstalowałam Safe Talk rodzicom po tym, jak sąsiadka straciła oszczędności przez oszusta. 
+          Aplikacja jest prosta w użyciu i daje mi spokój ducha."
+        </>
+      ),
+    },
+    {
+      name: 'Komisarz Piotr Kaczmarek',
+      description: 'Policja, Wydział ds. Cyberprzestępczości',
+      avatar: '/static/images/avatar-police.jpg',
+      children: (
+        <>
+          "Safe Talk to narzędzie, które może znacząco zmniejszyć liczbę oszustw telefonicznych. 
+          Prewencja w czasie rzeczywistym to przyszłość walki z cyberprzestępczością."
+        </>
+      ),
+    },
+    {
+      name: 'Janusz Kowalczyk',
+      description: 'Przedsiębiorca, 45 lat',
+      avatar: '/static/images/avatar-entrepreneur.jpg',
+      children: (
+        <>
+          "Jako właściciel firmy często otrzymuję podejrzane telefony. Safe Talk pomaga mi 
+          szybko rozpoznać oszustów i chronić dane mojej firmy."
         </>
       ),
     },

@@ -7,6 +7,7 @@ import {
   Heading,
   Stack,
   Text,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { Link } from "@saas-ui/react";
 import { FaTwitter } from "react-icons/fa";
@@ -33,7 +34,7 @@ export const Testimonial = ({
         <Avatar name={name} src={avatar} size="sm" bg="transparent" />
         <Stack spacing="1" ms="4">
           <Heading size="sm">{name}</Heading>
-          <Text color="muted" size="xs">
+          <Text color={useColorModeValue('safeTalk.navy.300', 'safeTalk.navy.200')} size="xs">
             {description}
           </Text>
         </Stack>
